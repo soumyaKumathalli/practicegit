@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression Test" thread-count="3" parallel="tests" verbose="3" >
+
+<!-- sometimes in parallel execution there are chances like if 3 thread are there and onr driver so after completing one test the driver
+has to go aother one soemtimes it may take more time that time we have to other test will becoem deadlock means thread will not reach there
+so in order to that we are using thread local which means creating separate webdriver for each thread so that it wont depend on one driver -->
+	
+	
+	<listeners>
+	
+	<listener
+	 class-name="com.qa.opencart.Listeners.ExtentReportListener"/>
+	 <listener
+	 class-name="com.qa.opencart.Listeners.TestAllureListener"/>
+	</listeners>
+	
+	
+	
+	
+	<test name="Google Test">
+		<classes>
+			<class name="com.qa.opencart.tests.LoginPageTest" />
+		</classes>
+	</test>
+	
+	<test name="Orange HRM Test">
+		<classes>
+			<class name="com.qa.opencart.tests.AccountsPageTest" />
+		</classes>
+	</test>
+</suite>

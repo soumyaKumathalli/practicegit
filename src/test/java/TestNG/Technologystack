@@ -1,0 +1,79 @@
+tech stack-
+1]selenium webdriver+java
+2]testng
+3]JDK 1.8
+4]apache POI
+5]log 4j api
+6]WDM
+7]extent report
+8]allure report
+9]maven
+10]jars
+11]dockerized grid
+12]jenkins
+13]Git hub
+14]NG ROK
+15]cloud
+16]eclipse
+
+
+design-
+1]design pattern :POM-WEB UI automation
+2]test layer-testNG
+3]util/libs/generic functions:elementutil/jsutil/excelutil
+4]3rd party libs:Sel ,WBM,testng,reports
+5]HTML report-extent report,allure report,testng html report
+6]Testng listeners
+7]loggers-log4j
+8]test data:data driven approach:properties,testNG parameters:data providers/excel sheet
+9]config properties:	QA/dev/stg/prod
+10]page chaining model 
+
+framewrok-means seggregation of multiple components and intergating the usecase 
+
+
+advantages of framework-
+1]diff layers
+2]maintenance
+3]hard coded will be rmeoved
+4]geenric FW
+5]duplicate code
+
+
+
+
+POM-its only applicable for web automation and mobile automation because we they have  multiple pages
+2] so each page in one java class,another page in another java class 
+
+
+1]page layer-
+a]loginpage-it tells the behaviour and all the elements in the login page will be present in that or not
+->the locators should be private
+->page actions-like click,sendkeys
+->actions has to be done by page layer like waht to do and all 
+
+
+2]Driver factory -webdriver
+a]initdriver	
+
+
+3]config-properties
+1]where we keep the browser and url information ,username and passowrd instead of hardcoding it
+
+
+4]Test layer-testNG
+a]where login page test using @Test annotation-so for each ans every java class a test class will be created
+b]and assertion
+c]********************dont use driver class here like driver.findelement***********************this is written in page layer
+
+
+
+
+5]Base class where driver will be given to test class-then page class->
+precondition means-parent for the test 
+means extend the base class  where all the methods are available to run before and after using @before and @after etc
+->where in turn it will call the driver factory becuase like opening url and enter userna,e and password whihc is precondition for driver
+
+s
+
+
