@@ -20,6 +20,11 @@ so in order to that we are using thread local which means creating separate webd
 	
 	
 	<test name="Google Test">
+	<groups>  
+<run>  
+<include name="Group A"/>  
+</run>  
+</groups>  
 		<classes>
 			<class name="com.qa.opencart.tests.LoginPageTest" />
 		</classes>
